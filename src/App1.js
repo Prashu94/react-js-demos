@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-class App1 extends Component {
+import Mobile from './components/Mobile';
+class App1 extends React.Component {
   constructor(props) {
     super(props);
     const mob1 = {
@@ -24,6 +25,9 @@ class App1 extends Component {
     return (
       <div className="row" style={{ marginTop: 30 }}>
         <h3 className="text-center text-primary">Mobile Shop Data</h3>
+        {this.mobArr.map((mobile) => (
+          <Mobile key={mobile.model} mobile={mobile} />
+        ))}
       </div>
     );
   };
