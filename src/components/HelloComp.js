@@ -1,0 +1,29 @@
+import React from 'react';
+
+class HelloComp extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      txtUsername: 'Infosys',
+    };
+
+    this.getName = (event) => {
+      this.setState({ txtUsername: event.target.value });
+    };
+  }
+
+  render = () => {
+    return (
+      <form>
+        <input
+          type="text"
+          name="txtUsername"
+          value={this.state.txtUsername}
+          onChange={this.getName}
+        />
+      </form>
+    );
+  };
+}
+
+export default HelloComp;
